@@ -1,19 +1,15 @@
 import { Navigate, RouteObject, useRoutes } from "react-router-dom";
-import DashboardLayout from "layouts";
-import Dashboard from "pages/home";
-import Profile from "pages/Profile";
-import Account from "pages/Account";
-
-import Login from "pages/Auth/Login";
-import React from "react";
+import Home from "pages/home";
+import Page1 from "pages/page1";
+import Page2 from "pages/page2";
 
 /*
   AppRoutes object contains path strings to use across application
 */
 export const AppRoutes = {
   default: "/",
-  profile: "/profile",
-  account: "/account",
+  page1: "/page1",
+  page2: "/page2",
   login: "/login",
 };
 
@@ -23,12 +19,12 @@ export const AppRoutes = {
 const routes: RouteObject[] = [
   {
     path: AppRoutes.login,
-    element: <Login />,
+    element: <div />,
   },
   {
     element: (
     //   <RequireAuth>
-        <DashboardLayout />
+        <Home />
     //   </RequireAuth>
     ),
     children: [
@@ -36,23 +32,23 @@ const routes: RouteObject[] = [
         path: AppRoutes.default,
         element: (
           <>
-            <Dashboard />
+            <Home />
           </>
         ),
       },
       {
-        path: AppRoutes.profile,
+        path: AppRoutes.page1,
         element: (
           <>
-            <Profile />
+            <Page1 />
           </>
         ),
       },
       {
-        path: AppRoutes.account,
+        path: AppRoutes.page2,
         element: (
           <>
-            <Account />
+            <Page2 />
           </>
         ),
       },

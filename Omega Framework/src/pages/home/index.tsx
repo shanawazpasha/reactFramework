@@ -1,58 +1,16 @@
+import React from 'react';
+import CoreLayout from 'layouts';
+import Counter from 'components/counter';
+import List from '../../components/list';
 
-import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import {
-  decrement,
-  increment,
-  incrementByAmount,
-  incrementAsync,
-  selectCount
-} from '../../store/jobListSlice'
 
-const JobList = () => {
-  const count = useSelector(selectCount)
-  const dispatch = useDispatch()
-  const [incrementAmount, setIncrementAmount] = useState('2')
-
+const Home = () => {
   return (
-    //<Counter />
+    <CoreLayout>
+      <Counter />
+      <List endpoint="/endpoint" /> {/* Replace with your API endpoint */}
+    </CoreLayout>
+  );
+};
 
-    <div>
-      <div>
-        <button 
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-        >
-          +
-        </button>
-        <span>{count}</span>
-        <button
-          aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
-        >
-          -
-        </button>
-      </div>
-      {/* omit additional rendering output here */}
-      <div>
-        <input 
-          aria-label="Set increment amount"
-          value={incrementAmount}
-          onChange={e => setIncrementAmount(e.target.value)}
-        />
-        <button 
-          onClick={() => dispatch(incrementByAmount(Number(incrementAmount) || 0))}
-        >
-          Add Amount
-        </button>
-        <button 
-          onClick={() => dispatch(incrementAsync(Number(incrementAmount) || 0))}
-        >
-          Add Async
-        </button>
-      </div>
-    </div>
-  )
-}
-
-export default JobList;
+export default Home;

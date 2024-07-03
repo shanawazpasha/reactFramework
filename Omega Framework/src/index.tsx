@@ -3,10 +3,23 @@ import ReactDOM from 'react-dom';
 import App from 'App';
 import reportWebVitals from './reportWebVitals';
 import 'rsuite/dist/rsuite.min.css';
+import ErrorBoundary from 'components/errorBoundary';
+import setupGlobalErrorHandler from './utils/errorHandler';
+import { newRelicConfig } from 'config/newrelic.config';
+
+// Set up New Relic
+if (window.NREUM) {
+  window.NREUM.info = newRelicConfig;
+}
+
+// Initialize global error handling
+setupGlobalErrorHandler();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
   </React.StrictMode>,
   document.getElementById('root')
 );
