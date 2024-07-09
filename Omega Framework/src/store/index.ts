@@ -12,7 +12,9 @@ const rootReducer = combineReducers({
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(loggerMiddleware),
+        getDefaultMiddleware()
+        .concat(loggerMiddleware)
+        .concat(apiService.middleware),
 })
 
 setupListeners(store.dispatch)

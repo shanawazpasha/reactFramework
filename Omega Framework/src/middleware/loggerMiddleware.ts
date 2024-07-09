@@ -1,10 +1,9 @@
 import { AnyAction, Dispatch, MiddlewareAPI } from 'redux';
+import Logger from '../utils/logger';
 
 type Middleware = (
   api: MiddlewareAPI<Dispatch<AnyAction>, any>
 ) => (next: Dispatch<AnyAction>) => (action: any) => any;
-
-import Logger from '../utils/logger';
 
 const loggerMiddleware: Middleware = (store) => (next) => (action) => {
     Logger.info('Dispatching action:', action);

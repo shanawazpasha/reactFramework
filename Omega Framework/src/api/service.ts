@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 // Define a service using a base URL and expected endpoints
 export const apiService = createApi({
   reducerPath: 'apiService',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://api.example.com' }), // Replace with your API base URL
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/todos' }), // Replace with your API base URL
   endpoints: (builder) => ({
     getData: builder.query<any, string>({
       query: (endpoint) => endpoint,

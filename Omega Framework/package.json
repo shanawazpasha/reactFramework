@@ -14,6 +14,7 @@
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
     "axios": "^1.7.2",
+    "caniuse-lite": "^1.0.30001640",
     "dayjs": "^1.11.0",
     "lodash": "^4.17.21",
     "react": "^18.3.1",
@@ -25,7 +26,6 @@
     "redux-thunk": "^2.4.2",
     "rsuite": "^5.8.0",
     "rsuite-table": "^5.4.0",
-    "typescript": "^4.4.2",
     "web-vitals": "^2.1.0",
     "yup": "^0.32.11"
   },
@@ -55,6 +55,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0"
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.5.3"
   }
 }

@@ -1,9 +1,5 @@
-import React from 'react';
+// src/utils/customHelper.ts
 
-export const CustomHelper = ({ text, maxLength }) => {
-  const truncatedText = text.length > maxLength 
-    ? text.substring(0, maxLength) + '...' 
-    : text;
-  
-  return <span>{truncatedText}</span>;
+export const truncateText = (text: string, maxLength: number): string => {
+  return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
 };

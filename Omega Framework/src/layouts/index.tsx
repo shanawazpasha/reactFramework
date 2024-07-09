@@ -14,10 +14,13 @@ interface ThemeProviderProps {
 const CoreLayout: FC<ThemeProviderProps> = ({ children }) => {
   return (
     <ThemeProvider theme={Theme}>
-      <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
-        <Header />
-        {children}
+      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Box component="header" sx={{ position: 'fixed', width: '100%', zIndex: 1 }}>
+          <Header />
+        </Box>
+        <Box component="main" sx={{ flex: '1 0 auto', mt: '64px' }}> {/* Adjust mt value to header height */}
+          {children}
+        </Box>
       </Box>
     </ThemeProvider>
   );
