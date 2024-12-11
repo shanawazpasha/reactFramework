@@ -1,4 +1,4 @@
-# Omega React Framework
+# React Framework
 
 ## Overview
 This repository contains a comprehensive React framework designed to facilitate the development of scalable and maintainable web applications. The framework incorporates various features and best practices to streamline development processes.
